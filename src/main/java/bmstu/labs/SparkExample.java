@@ -1,2 +1,5 @@
-package bmstu.labs;public class SparkExample {
+package bmstu.labs;
+
+public class SparkExample {
+    
 }
