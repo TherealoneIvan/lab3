@@ -7,5 +7,5 @@ import org.apache.spark.api.java.JavaSparkContext;
 public class SparkExample {
     SparkConf conf = new SparkConf().setAppName("sample");
     JavaSparkContext sc = new JavaSparkContext(conf);
-    JavaRDD<String> lines = sc.textFile("/path/to/README.md");
+    JavaRDD<String> lines = sc.textFile("");
 }
