@@ -7,6 +7,6 @@ import org.apache.spark.api.java.JavaSparkContext;
 public class SparkExample {
     SparkConf conf = new SparkConf().setAppName("sample");
     JavaSparkContext sc = new JavaSparkContext(conf);
-    JavaRDD<String> lines = sc.textFile("hdfs://");
+    JavaRDD<String> inputRDD = sc.textFile("hdfs://");
     
 }
