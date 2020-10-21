@@ -63,7 +63,7 @@ public class SparkExample {
                         allDelaydFlights++;
                         maxDelay = Math.max(maxDelay , item.getTimeDelay());
                     }
-                    int delayProcent =
+                    int delayProcent = 
                 }
         )
     }
