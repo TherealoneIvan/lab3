@@ -8,6 +8,11 @@ public class FlightDataSerializable implements Serializable {
     private int delayedCount;
     private int allFlightsCount;
 
+    public FlightDataSerializable(double maxDelay, int delayedCount, int allFlightsCount) {
+        this.maxDelay = maxDelay;
+        this.delayedCount = delayedCount;
+        this.allFlightsCount = allFlightsCount;
+    }
 
     public void DelyedAdd(){
         delayedCount++;
@@ -18,22 +23,6 @@ public class FlightDataSerializable implements Serializable {
     }
     public void MaxDelayCompare(double newDelay){
         maxDelay = Math.max(maxDelay , newDelay);
-    }
-
-    public int getAiroportID() {
-        return airoportID;
-    }
-
-    public void setAiroportID(int airoportID) {
-        this.airoportID = airoportID;
-    }
-
-    public int getDestId() {
-        return destId;
-    }
-
-    public void setDestId(int destId) {
-        this.destId = destId;
     }
 
     public double getMaxDelay() {
