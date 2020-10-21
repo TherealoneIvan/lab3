@@ -36,6 +36,8 @@ public class SparkExample {
 //                         line.split(flightRegex)[]
 //    }
         JavaPairRDD<Tuple2<Integer, Integer>, AiroportDataSeriazable> resRDD = inputFlightRDD
-                .mapToPair(new Function<String ,Integer >()
+                .mapToPair(new Function<String ,Integer >(){
+                
+    }
                 );
 }
