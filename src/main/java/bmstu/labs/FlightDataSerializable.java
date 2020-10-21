@@ -3,16 +3,12 @@ package bmstu.labs;
 import java.io.Serializable;
 
 public class FlightDataSerializable implements Serializable {
-    private int airoportID;
-    private int destId;
-    private double maxDelay = 0.0;
-    private int delayedCount = 0;
-    private int allFlightsCount = 0;
 
-    public FlightDataSerializable(int airoportID, int destId) {
-        this.airoportID = airoportID;
-        this.destId = destId;
-    }
+    private double maxDelay;
+    private int delayedCount;
+    private int allFlightsCount;
+
+
     public void DelyedAdd(){
         delayedCount++;
         allFlightsCount++;
