@@ -7,7 +7,8 @@ import org.apache.spark.api.java.JavaSparkContext;
 import scala.Tuple2;
 
 public class SparkExample {
-    public static void main(String args[]) {
+    public static void main(String args[]) throws Exception {
+        
         SparkConf conf = new SparkConf().setAppName("sample");
         JavaSparkContext sc = new JavaSparkContext(conf);
         JavaRDD<String> inputRDD = sc.textFile("hdfs://");
