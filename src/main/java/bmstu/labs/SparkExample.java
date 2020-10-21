@@ -26,7 +26,7 @@ public class SparkExample {
         JavaRDD<String> inputAiroportRDD = sc.textFile(airoportPath);
         JavaRDD<String> inputFlightRDD = sc.textFile(flightPath);
         JavaPairRDD<Tuple2<Integer, Integer>, AiroportDataSeriazable> resRDD = inputFlightRDD
-                .mapToPair(  line->line.split(flightRegex)
+                .mapToPair(  line-> new Tuple2<>()
 
         )
     }
