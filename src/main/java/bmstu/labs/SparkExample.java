@@ -52,7 +52,8 @@ public class SparkExample {
                         }
                 );
 
-        JavaPairRDD<Tuple2<Integer, Integer>, FlightDataSerializable> reducedRes = resRDD.reduceByKey(
+        JavaPairRDD<Tuple2<Integer, Integer>, FlightDataSerializable> reducedRes = resRDD
+                .reduceByKey(
                 item -> {
                     FlightDataSerializable a = new FlightDataSerializable(
                             item.getOriginAiroportID(),
@@ -60,5 +61,6 @@ public class SparkExample {
                     );
                     
                 }
+                )
     }
 }
