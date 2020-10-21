@@ -20,7 +20,8 @@ public class SparkExample {
         JavaSparkContext sc = new JavaSparkContext(conf);
         JavaRDD<String> inputAiroportRDD = sc.textFile(airoportPath);
         JavaRDD<String> inputFlightRDD = sc.textFile(flightPath);
-        JavaPairRDD<Tuple2<Integer, Integer>, AiroportDataSeriazable> resRDD = inputRDD.mapToPair(
+        JavaPairRDD<Tuple2<Integer, Integer>, AiroportDataSeriazable> resRDD = inputFlightRDD
+                .mapToPair(
 
         )
     }
