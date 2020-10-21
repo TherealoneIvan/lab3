@@ -6,6 +6,8 @@ import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import scala.Tuple2;
 
+import java.nio.file.Path;
+
 public class SparkExample {
     public static void main(String args[]) throws Exception {
         if (args.length != 3) {
@@ -14,7 +16,7 @@ public class SparkExample {
         }
         SparkConf conf = new SparkConf().setAppName("sample");
         JavaSparkContext sc = new JavaSparkContext(conf);
-        JavaRDD<String> inputAiroportRDD = sc.textFile(Path(args[0]));
+        JavaRDD<String> inputAiroportRDD = sc.textFile(new Path(args[1]));
         JavaRDD<String> inputFlightRDD = sc.textFile();
         JavaPairRDD<Tuple2<Integer, Integer>, AiroportDataSeriazable> resRDD = inputRDD.mapToPair(
 
