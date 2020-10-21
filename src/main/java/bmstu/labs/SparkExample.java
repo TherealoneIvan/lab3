@@ -11,8 +11,8 @@ public class SparkExample {
 
     public static final String flightRegex = ",";
     public static final int originAiroportID = 11;
-    public static final int originDestID = 1;
-    public static final int originAiroportID = 11;
+    public static final int originDestID = 14;
+    public static final int origin = 11;
     public static final int originAiroportID = 11;
 
     public static void main(String args[]) throws Exception {
