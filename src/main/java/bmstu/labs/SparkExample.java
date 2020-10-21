@@ -54,7 +54,7 @@ public class SparkExample {
 
         JavaPairRDD<Tuple2<Integer, Integer>, String> reducedRes = resRDD.reduceByKey(
                 item->{
-                    int maxDelay = 0;
+                    double maxDelay = 0.d;
                     int allDelaydFlights = 0;
                     if (item.isCanceld()){
                         allDelaydFlights++;
@@ -62,7 +62,7 @@ public class SparkExample {
                         allDelaydFlights++;
                         maxDelay = Math.max(maxDelay , item.getTimeDelay());
                     }
-
+                    int delayProcent = 
                 }
         )
     }
