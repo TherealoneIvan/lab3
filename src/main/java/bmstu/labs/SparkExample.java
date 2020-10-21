@@ -53,7 +53,6 @@ public class SparkExample {
                 );
 
         JavaPairRDD<Tuple2<Integer, Integer>, String> reducedRes = resRDD.reduceByKey(
-                new F
                 item->{
                     int allFlights = 0;
                     double maxDelay = 0.d;
