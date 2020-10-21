@@ -5,17 +5,17 @@ import java.io.Serializable;
 public class AiroportDataSeriazable implements Serializable {
     private int originAiroportID;
     private int destAiroportID;
-    private int timeDelay;
+    private double timeDelay;
     private boolean isCanceld;
 
-    public AiroportDataSeriazable(int originAiroportID, int destAiroportID, int timeDelay, boolean isCanceld) {
+    public AiroportDataSeriazable(int originAiroportID, int destAiroportID, double timeDelay, boolean isCanceld) {
         this.originAiroportID = originAiroportID;
         this.destAiroportID = destAiroportID;
         this.timeDelay = timeDelay;
         this.isCanceld = isCanceld;
     }
 
-    public int getTimeDelay() {
+    public double getTimeDelay() {
         return timeDelay;
     }
 

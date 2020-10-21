@@ -44,8 +44,8 @@ public class SparkExample {
                                 new AiroportDataSeriazable(
                                         Integer.parseInt(items[originAiroportID]),
                                         Integer.parseInt(items[originDestID]),
-                                        ,
-                                        true));
+                                        Double.parseDouble(items[originDelayID]),
+                                        false));
                     }
                 }
                 );
