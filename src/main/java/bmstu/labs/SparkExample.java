@@ -8,8 +8,9 @@ import scala.Tuple2;
 
 public class SparkExample {
     public static void main(String args[]) throws Exception {
-        if (args.length != 3){
-
+        if (args.length != 3) {
+            System.err.println("SparkApp exception");
+            System.exit(1);
         }
         SparkConf conf = new SparkConf().setAppName("sample");
         JavaSparkContext sc = new JavaSparkContext(conf);
