@@ -5,5 +5,38 @@ import java.io.Serializable;
 public class AiroportDataSeriazable implements Serializable {
     private int originAiroportID;
     private int destAiroportID;
-    private
+    private int timeDelay;
+    private boolean isCanceld;
+
+    public int getTimeDelay() {
+        return timeDelay;
+    }
+
+    public void setTimeDelay(int timeDelay) {
+        this.timeDelay = timeDelay;
+    }
+
+    public boolean isCanceld() {
+        return isCanceld;
+    }
+
+    public void setCanceld(boolean canceld) {
+        isCanceld = canceld;
+    }
+
+    public int getDestAiroportID() {
+        return destAiroportID;
+    }
+
+    public void setDestAiroportID(int destAiroportID) {
+        this.destAiroportID = destAiroportID;
+    }
+
+    public int getOriginAiroportID() {
+        return originAiroportID;
+    }
+
+    public void setOriginAiroportID(int originAiroportID) {
+        this.originAiroportID = originAiroportID;
+    }
 }
