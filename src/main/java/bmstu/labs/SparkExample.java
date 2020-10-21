@@ -53,19 +53,8 @@ public class SparkExample {
                 );
 
         JavaPairRDD<Tuple2<Integer, Integer>, FlightDataSerializable> reducedRes = resRDD
-                .reduceByKey(
-                item -> {
-                    FlightDataSerializable a = new FlightDataSerializable(
-                            item.getOriginAiroportID(),
-                            item.getDestAiroportID()
-                    );
-                    if (item.isCanceld() || item.getTimeDelay() > 0){
-                        a.DelyedAdd();
-                        a.MaxDelayCompare(item.getTimeDelay());
-                    }else
-                        a.AllAdd();
-                    return a;
-                }
+                .combineByKey(
+                        ()
                 );
     }
 }
