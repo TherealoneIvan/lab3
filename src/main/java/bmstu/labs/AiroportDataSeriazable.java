@@ -8,6 +8,13 @@ public class AiroportDataSeriazable implements Serializable {
     private int timeDelay;
     private boolean isCanceld;
 
+    public AiroportDataSeriazable(int originAiroportID, int destAiroportID, int timeDelay, boolean isCanceld) {
+        this.originAiroportID = originAiroportID;
+        this.destAiroportID = destAiroportID;
+        this.timeDelay = timeDelay;
+        this.isCanceld = isCanceld;
+    }
+
     public int getTimeDelay() {
         return timeDelay;
     }
