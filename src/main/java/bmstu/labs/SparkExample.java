@@ -13,9 +13,10 @@ public class SparkExample {
         }
         SparkConf conf = new SparkConf().setAppName("sample");
         JavaSparkContext sc = new JavaSparkContext(conf);
-        JavaRDD<String> inputRDD = sc.textFile("hdfs://");
+        JavaRDD<String> inputAiroportRDD = sc.textFile("hdfs://");
+        JavaRDD<String> inputFlightRDD = sc.textFile();
         JavaPairRDD<Tuple2<Integer, Integer>, AiroportDataSeriazable> resRDD = inputRDD.mapToPair(
-                
+
         )
     }
 }
