@@ -57,7 +57,8 @@ public class SparkExample {
                         item -> new FlightDataSerializable(
                                 item.getOriginAiroportID(),
                                 item.getDestAiroportID()
-                        )
+                        ),
+                        ()
                 );
     }
 }
