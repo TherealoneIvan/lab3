@@ -9,7 +9,7 @@ import scala.Tuple2;
 import java.util.function.Function;
 
 class F implements Function<String , String>{
-    
+
 }
 public class SparkExample {
 
