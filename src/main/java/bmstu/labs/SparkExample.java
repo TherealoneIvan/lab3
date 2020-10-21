@@ -1,6 +1,5 @@
 package bmstu.labs;
 
-import org.apache.hadoop.fs.Path;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
@@ -9,7 +8,9 @@ import scala.Tuple2;
 
 
 public class SparkExample {
-    
+
+    public static final String flightRegex = ",";
+    public static final int 
     public static void main(String args[]) throws Exception {
         if (args.length != 3) {
             System.err.println("SparkApp exception");
@@ -22,7 +23,7 @@ public class SparkExample {
         JavaRDD<String> inputAiroportRDD = sc.textFile(airoportPath);
         JavaRDD<String> inputFlightRDD = sc.textFile(flightPath);
         JavaPairRDD<Tuple2<Integer, Integer>, AiroportDataSeriazable> resRDD = inputFlightRDD
-                .mapToPair( line->line.split(",")
+                .mapToPair( line->line.split(flightRegex)
 
         )
     }
