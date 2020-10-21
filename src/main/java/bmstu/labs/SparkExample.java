@@ -49,6 +49,9 @@ public class SparkExample {
                             }
                         }
                 );
+
+        JavaPairRDD<Tuple2<Integer, Integer>, String> reducedRes = resRDD.reduceByKey(
+                
+        )
     }
-    JavaPairRDD<Tuple2<Integer , Integer> , String> reducedRes = 
 }
