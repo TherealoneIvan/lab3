@@ -1,5 +1,5 @@
 package bmstu.labs;
 
-public class AiroportDataSeriazable {
-    private 
+public class AiroportDataSeriazable extends S{
+    private
 }
