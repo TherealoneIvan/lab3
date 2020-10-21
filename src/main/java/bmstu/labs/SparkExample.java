@@ -60,7 +60,7 @@ public class SparkExample {
                         allDelaydFlights++;
                     }else if (item.getTimeDelay() > 0){
                         allDelaydFlights++;
-                        maxDelay = max(maxDelay , item.getTimeDelay());
+                        maxDelay = Math.max(maxDelay , item.getTimeDelay());
                     }
 
                 }
