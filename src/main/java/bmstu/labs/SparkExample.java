@@ -59,8 +59,15 @@ public class SparkExample {
                             item.getOriginAiroportID(),
                             item.getDestAiroportID()
                     );
-                       
+                    if (item.isCanceld() || item.getTimeDelay() > 0){
+                        a.DelyedAdd();
+                        a.MaxDelayCompare(item.getTimeDelay());
+                    }else
+                        a.AllAdd();
+                    return new Tuple2<>(new Tuple2<>(
+                            item.getDestAiroportID(),
+                            item.getOriginAiroportID()), a);
                 }
-                )
+                );
     }
 }
