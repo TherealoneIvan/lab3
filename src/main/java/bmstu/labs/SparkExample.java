@@ -9,6 +9,7 @@ import scala.Tuple2;
 
 
 public class SparkExample {
+    
     public static void main(String args[]) throws Exception {
         if (args.length != 3) {
             System.err.println("SparkApp exception");
