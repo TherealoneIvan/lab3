@@ -30,7 +30,7 @@ public class SparkExample {
         JavaPairRDD<Tuple2<Integer, Integer>, AiroportDataSeriazable> resRDD = inputFlightRDD
                 .mapToPair(  line->{
                     String[] items = line.split(flightRegex);
-                    if ()
+                    if (items[originCanceldID] == 1)
                 }
                 );
 }
