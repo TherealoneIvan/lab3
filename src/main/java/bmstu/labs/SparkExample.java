@@ -64,9 +64,7 @@ public class SparkExample {
                         a.MaxDelayCompare(item.getTimeDelay());
                     }else
                         a.AllAdd();
-                    return new Tuple2<>(new Tuple2<>(
-                            item.getDestAiroportID(),
-                            item.getOriginAiroportID()), a);
+                    return a;
                 }
                 );
     }
