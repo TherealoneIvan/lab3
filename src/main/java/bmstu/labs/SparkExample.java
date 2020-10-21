@@ -10,5 +10,5 @@ public class SparkExample {
     SparkConf conf = new SparkConf().setAppName("sample");
     JavaSparkContext sc = new JavaSparkContext(conf);
     JavaRDD<String> inputRDD = sc.textFile("hdfs://");
-    JavaPairRDD<Tuple2<String , String> , String> resRDD = inputRDD.mapToPair()
+    JavaPairRDD<Tuple2<Integer , Integer> , String> resRDD = inputRDD.mapToPair()
 }
