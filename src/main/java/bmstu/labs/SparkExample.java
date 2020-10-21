@@ -10,7 +10,7 @@ import scala.Tuple2;
 public class SparkExample {
 
     public static final String flightRegex = ",";
-    public static final int 
+    public static final int originAiroportID = 
     public static void main(String args[]) throws Exception {
         if (args.length != 3) {
             System.err.println("SparkApp exception");
