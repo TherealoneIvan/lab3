@@ -7,9 +7,10 @@ import org.apache.spark.api.java.JavaSparkContext;
 import scala.Tuple2;
 
 public class SparkExample {
-    public static void main(a)
-    SparkConf conf = new SparkConf().setAppName("sample");
-    JavaSparkContext sc = new JavaSparkContext(conf);
-    JavaRDD<String> inputRDD = sc.textFile("hdfs://");
-    JavaPairRDD<Tuple2<Integer , Integer> , String> resRDD = inputRDD.mapToPair()
+    public static void main(String args[]) {
+        SparkConf conf = new SparkConf().setAppName("sample");
+        JavaSparkContext sc = new JavaSparkContext(conf);
+        JavaRDD<String> inputRDD = sc.textFile("hdfs://");
+        JavaPairRDD<Tuple2<Integer, Integer>, String> resRDD = inputRDD.mapToPair()
+    }
 }
