@@ -1,2 +1,5 @@
-package bmstu.labs;public class AiroportDataSeriazable {
+package bmstu.labs;
+
+public class AiroportDataSeriazable {
+    
 }
