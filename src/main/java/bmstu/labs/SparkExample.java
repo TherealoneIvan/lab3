@@ -7,6 +7,8 @@ import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.api.java.function.Function;
 import scala.Tuple2;
 
+import javax.validation.constraints.Max;
+
 
 public class SparkExample {
 
@@ -53,7 +55,14 @@ public class SparkExample {
         JavaPairRDD<Tuple2<Integer, Integer>, String> reducedRes = resRDD.reduceByKey(
                 item->{
                     int maxDelay = 0;
-                    
+                    int allDelaydFlights = 0;
+                    if (item.isCanceld()){
+                        allDelaydFlights++;
+                    }else if (item.getTimeDelay() > 0){
+                        allDelaydFlights++;
+                        
+                    }
+
                 }
         )
     }
