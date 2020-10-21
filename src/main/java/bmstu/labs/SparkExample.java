@@ -28,25 +28,26 @@ public class SparkExample {
         JavaRDD<String> inputAiroportRDD = sc.textFile(airoportPath);
         JavaRDD<String> inputFlightRDD = sc.textFile(flightPath);
         JavaPairRDD<Tuple2<Integer, Integer>, AiroportDataSeriazable> resRDD = inputFlightRDD
-                .mapToPair(  line->{
-                    String[] items = line.split(flightRegex);
-                    if (items[originCanceldID].equals("1")){
-                        return new Tuple2<>(new Tuple2<>(Integer.parseInt(items[originAiroportID])
-                        ,Integer.parseInt(items[originDestID])) ,
-                                new AiroportDataSeriazable(
-                                        Integer.parseInt(items[originAiroportID]),
-                                        Integer.parseInt(items[originDestID]),
-                                        0,
-                                        true));
-                    }else {
-                        return new Tuple2<>(new Tuple2<>(Integer.parseInt(items[originAiroportID])
-                                ,Integer.parseInt(items[originDestID])) ,
-                                new AiroportDataSeriazable(
-                                        Integer.parseInt(items[originAiroportID]),
-                                        Integer.parseInt(items[originDestID]),
-                                        Double.parseDouble(items[originDelayID]),
-                                        false));
-                    }
-                }
+                .mapToPair(line -> {
+                            String[] items = line.split(flightRegex);
+                            if (items[originCanceldID].equals("1")) {
+                                return new Tuple2<>(new Tuple2<>(Integer.parseInt(items[originAiroportID])
+                                        , Integer.parseInt(items[originDestID])),
+                                        new AiroportDataSeriazable(
+                                                Integer.parseInt(items[originAiroportID]),
+                                                Integer.parseInt(items[originDestID]),
+                                                0,
+                                                true));
+                            } else {
+                                return new Tuple2<>(new Tuple2<>(Integer.parseInt(items[originAiroportID])
+                                        , Integer.parseInt(items[originDestID])),
+                                        new AiroportDataSeriazable(
+                                                Integer.parseInt(items[originAiroportID]),
+                                                Integer.parseInt(items[originDestID]),
+                                                Double.parseDouble(items[originDelayID]),
+                                                false));
+                            }
+                        }
                 );
+    }
 }
