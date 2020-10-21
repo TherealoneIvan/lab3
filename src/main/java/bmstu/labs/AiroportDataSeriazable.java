@@ -1,5 +1,7 @@
 package bmstu.labs;
 
-public class AiroportDataSeriazable extends S{
-    private
+import java.io.Serializable;
+
+public class AiroportDataSeriazable implements Serializable {
+    private int
 }
