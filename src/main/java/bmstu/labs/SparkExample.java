@@ -32,6 +32,7 @@ public class SparkExample {
         JavaPairRDD<Integer , String> airoportNames = inputAiroportRDD
                 .mapToPair( line -> {
                             String [] airportsNames = line.split(flightRegex);
+                            String airport = "";
                             
 
                         }
