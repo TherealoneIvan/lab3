@@ -33,7 +33,9 @@ public class SparkExample {
                 .mapToPair( line -> {
                             String [] airportsNames = line.split(flightRegex);
                             String airport = "";
-                            
+                            for (int i = 1 ; i < airportsNames.length; i++)
+                                airportName += airraces[i];
+                    int airaceID = Integer.parseInt(airraces[0].replace("\"" , ""));
 
                         }
                 )
