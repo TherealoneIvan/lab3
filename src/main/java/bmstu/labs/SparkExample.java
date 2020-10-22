@@ -60,6 +60,6 @@ public class SparkExample {
                                                             p
                         ),
                     FlightDataSerializable::Add
-                )
+                );
     }
 }
