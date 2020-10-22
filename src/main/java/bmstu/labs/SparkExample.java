@@ -38,7 +38,7 @@ public class SparkExample {
                                 airport += airportsNames[i];
                             int airaceID = Integer.parseInt(airportsNames[0]
                                     .replace(REGEX_BACKSLASH, ""));
-                            
+                            return 
                         }
                 )
         JavaPairRDD<Tuple2<Integer, Integer>, AiroportDataSeriazable> resRDD = inputFlightRDD
