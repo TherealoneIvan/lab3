@@ -37,7 +37,9 @@ public class FlightDataSerializable implements Serializable {
                 a.getAllFlightsCount() + b.getAllFlightsCount()
         );
     }
-
+    public String ReturnProcent() {
+        double res = 
+    }
     public void MaxDelayCompare(double newDelay){
         maxDelay = Math.max(maxDelay , newDelay);
     }
