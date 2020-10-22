@@ -80,5 +80,8 @@ public class SparkExample {
                 );
         final Broadcast<Map<Integer, String>> airportsBroadcasted =
                 sc.broadcast(airName);
+        JavaRDD<String> resOutput = reducedRes.map(
+                
+        )
     }
 }
