@@ -56,7 +56,6 @@ public class SparkExample {
                 .combineByKey(
                        item-> new FlightDataSerializable(0 , 1 , 1),
                         (flightDataSerializable , item) -> {
-                           
                         }
 
                 );
