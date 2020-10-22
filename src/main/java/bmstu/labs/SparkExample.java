@@ -31,11 +31,11 @@ public class SparkExample {
         JavaRDD<String> inputFlightRDD = sc.textFile(flightPath);
         JavaPairRDD<Integer , String> airoportNames = inputAiroportRDD
                 .mapToPair( line -> {
-                            String [] airportsNames = line.split(flightRegex);
+                            String[] airportsNames = line.split(flightRegex);
                             String airport = "";
-                            for (int i = 1 ; i < airportsNames.length; i++)
-                                airportName += airraces[i];
-                    int airaceID = Integer.parseInt(airraces[0].replace("\"" , ""));
+                            for (int i = 1; i < airportsNames.length; i++)
+                                airport += airportsNames[i];
+                            int airaceID = Integer.parseInt(airoportsNames[0].replace("\"", ""));
 
                         }
                 )
