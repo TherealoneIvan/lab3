@@ -38,9 +38,9 @@ public class SparkExample {
                                 airport += airportsNames[i];
                             int airaceID = Integer.parseInt(airportsNames[0]
                                     .replace(REGEX_BACKSLASH, ""));
-                            return 
+                            return new Tuple2<>(airaceID , airport);
                         }
-                )
+                );
         JavaPairRDD<Tuple2<Integer, Integer>, AiroportDataSeriazable> resRDD = inputFlightRDD
                 .mapToPair(line -> {
                             String[] items = line.split(flightRegex);
