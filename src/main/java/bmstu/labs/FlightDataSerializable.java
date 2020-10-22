@@ -21,7 +21,7 @@ public class FlightDataSerializable implements Serializable {
     public void AllAdd(){
         allFlightsCount++;
     }
-    public static FlightDataSerializable 
+    public static FlightDataSerializable addValue(FlightDataSerializable)
     public FlightDataSerializable Add(FlightDataSerializable a , FlightDataSerializable b){
         return new FlightDataSerializable(
                 Math.max(a.maxDelay , b.maxDelay),
