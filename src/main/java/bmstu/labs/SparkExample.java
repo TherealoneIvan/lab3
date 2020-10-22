@@ -87,8 +87,13 @@ public class SparkExample {
                             + item._1 + " "
                             + airportsBroadcasted.value().get(item._1._2) + " "
                             + item._2 + " "
-                            +
+                            + "max delay= "
+                            + item._2.getMaxDelay() + " "
+                            + "delayed procent "
+                            + item._2.ReturnProcent();
+                    return output;
                 }
-        )
+        );
+        
     }
 }
