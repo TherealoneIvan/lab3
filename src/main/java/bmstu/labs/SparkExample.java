@@ -29,7 +29,12 @@ public class SparkExample {
         JavaSparkContext sc = new JavaSparkContext(conf);
         JavaRDD<String> inputAiroportRDD = sc.textFile(airoportPath);
         JavaRDD<String> inputFlightRDD = sc.textFile(flightPath);
-        JavaPairRDD<Integer , String> airoportNames = inputAiroportRDD.mapToPair()
+        JavaPairRDD<Integer , String> airoportNames = inputAiroportRDD
+                .mapToPair( line -> {
+                                    String [] airportsNames = line.split(flightRegex);
+                                    
+                        }
+                )
         JavaPairRDD<Tuple2<Integer, Integer>, AiroportDataSeriazable> resRDD = inputFlightRDD
                 .mapToPair(line -> {
                             String[] items = line.split(flightRegex);
