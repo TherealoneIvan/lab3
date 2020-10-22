@@ -17,6 +17,7 @@ public class SparkExample {
     public static final int originDestID = 14;
     public static final int originDelayID = 18;
     public static final int originCanceldID = 19;
+    public static final String REGEX_BACKSLASH = "\"";
 
     public static void main(String args[]) throws Exception {
         if (args.length != 3) {
@@ -35,8 +36,9 @@ public class SparkExample {
                             String airport = "";
                             for (int i = 1; i < airportsNames.length; i++)
                                 airport += airportsNames[i];
-                            int airaceID = Integer.parseInt(airoportsNames[0].replace("\"", ""));
-
+                            int airaceID = Integer.parseInt(airportsNames[0]
+                                    .replace(REGEX_BACKSLASH, ""));
+                            
                         }
                 )
         JavaPairRDD<Tuple2<Integer, Integer>, AiroportDataSeriazable> resRDD = inputFlightRDD
