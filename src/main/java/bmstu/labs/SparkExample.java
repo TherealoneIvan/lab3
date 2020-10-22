@@ -56,8 +56,9 @@ public class SparkExample {
                 .combineByKey(
                     p -> FlightDataSerializable(p.getTimeDelay() , 1 , 1),
                         (flightDataSerializable  , p) -> FlightDataSerializable.addValue(
-                                                            
-                        )
+                                                            flightDataSerializable,
+                                                            p
+                        ),
                 )
     }
 }
