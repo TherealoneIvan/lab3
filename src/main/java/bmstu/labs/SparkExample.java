@@ -78,7 +78,7 @@ public class SparkExample {
                         ),
                     FlightDataSerializable::Add
                 );
-        final Broadcast<Map<String, FlightDataSerializable>> airportsBroadcasted =
+        final Broadcast<Map<Integer, String>> airportsBroadcasted =
                 sc.broadcast(airName);
     }
 }
