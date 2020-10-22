@@ -73,6 +73,6 @@ public class SparkExample {
                         ),
                     FlightDataSerializable::Add
                 );
-        airoportNameKey
+        
     }
 }
