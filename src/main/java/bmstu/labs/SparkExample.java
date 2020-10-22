@@ -94,6 +94,6 @@ public class SparkExample {
                     return output;
                 }
         );
-        resOutput.saveAsTextFile();
+        resOutput.saveAsTextFile("hdfs://");
     }
 }
