@@ -97,3 +97,4 @@ public class SparkExample {
         resOutput.saveAsTextFile("hdfs://localhost:9000/user/macos/output");
     }
 }
+///Users/macos/IdeaProjects/lab3/target
