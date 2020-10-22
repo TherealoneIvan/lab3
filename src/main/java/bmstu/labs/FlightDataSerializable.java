@@ -30,7 +30,7 @@ public class FlightDataSerializable implements Serializable {
         );
     }
 
-    public FlightDataSerializable Add(FlightDataSerializable a , FlightDataSerializable b){
+    public static FlightDataSerializable Add(FlightDataSerializable a , FlightDataSerializable b){
         return new FlightDataSerializable(
                 Math.max(a.maxDelay , b.maxDelay),
                 a.getDelayedCount() + b.getDelayedCount(),
