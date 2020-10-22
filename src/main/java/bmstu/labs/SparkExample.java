@@ -8,6 +8,7 @@ import org.apache.spark.api.java.function.Function;
 import scala.Tuple2;
 
 import javax.validation.constraints.Max;
+import java.util.Map;
 
 
 public class SparkExample {
@@ -41,6 +42,9 @@ public class SparkExample {
                             return new Tuple2<>(airaceID , airport);
                         }
                 );
+
+        Map<Integer , String> airName = airoportNames.collectAsMap();
+
         JavaPairRDD<Tuple2<Integer, Integer>, AiroportDataSeriazable> resRDD = inputFlightRDD
                 .mapToPair(line -> {
                             String[] items = line.split(flightRegex);
@@ -73,8 +77,7 @@ public class SparkExample {
                         ),
                     FlightDataSerializable::Add
                 );
-        Map<String , >
-        final Broadcast<Map<String, AirportData>> airportsBroadcasted =
+        final Broadcast<Map<String, >> airportsBroadcasted =
                 sc.broadcast(stringAirportDataMap);
     }
 }
