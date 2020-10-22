@@ -22,7 +22,9 @@ public class FlightDataSerializable implements Serializable {
         allFlightsCount++;
     }
 
-    public void Add()
+    public void Add(FlightDataSerializable a , FlightDataSerializable b){
+        
+    }
 
     public void MaxDelayCompare(double newDelay){
         maxDelay = Math.max(maxDelay , newDelay);
