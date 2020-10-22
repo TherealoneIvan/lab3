@@ -61,5 +61,6 @@ public class SparkExample {
                         ),
                     FlightDataSerializable::Add
                 );
+        
     }
 }
