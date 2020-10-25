@@ -72,7 +72,8 @@ public class SparkExample {
                                                 Integer.parseInt(items[originDestID]),
                                                 0,
                                                 true));
-                            } else if (!items[originDestID].equals(EMPTY_STRING) && !items[originDelayID].equals("")) {
+                            } else if (!items[originDestID].equals(EMPTY_STRING)
+                                    && !items[originDelayID].equals("")) {
                                 return new Tuple2<>(new Tuple2<>(Integer.parseInt(items[originAiroportID])
                                         , Integer.parseInt(items[originDestID])),
                                         new AiroportDataSeriazable(
