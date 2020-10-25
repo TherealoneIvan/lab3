@@ -28,7 +28,8 @@ public class SparkExample {
         String flightPath = args[1];
         SparkConf conf = new SparkConf().setAppName("sample");
         JavaSparkContext sc = new JavaSparkContext(conf);
-        JavaRDD<String> inputAiroportRDD = sc.textFile(airoportPath);
+        JavaRDD<String> inputAiroportRDD = sc.textFile(airoportPath)
+                .filter();
         JavaRDD<String> inputFlightRDD = sc.textFile(flightPath);
         JavaPairRDD<Integer , String> airoportNames = inputAiroportRDD
                 .mapToPair( line -> {
