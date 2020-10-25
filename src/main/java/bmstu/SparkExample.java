@@ -30,7 +30,9 @@ public class SparkExample {
         String flightPath = args[1];
         SparkConf conf = new SparkConf().setAppName("sample");
         JavaSparkContext sc = new JavaSparkContext(conf);
-        Function2 removeHeader = new Function2<Integer , Iterator<String> , Iterator<String>>
+        Function2 removeHeader = new Function2<Integer , Iterator<String> , Iterator<String>>(){
+            
+        }
         JavaRDD<String> inputAiroportRDD = sc.textFile(airoportPath)
                 .mapPartitionsWithIndex(
                         (indx , line) -> {
