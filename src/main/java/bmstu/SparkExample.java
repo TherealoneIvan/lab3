@@ -86,7 +86,12 @@ public class SparkExample {
 
         JavaPairRDD<Tuple2<Integer, Integer>, FlightDataSerializable> reducedRes = resRDD
                 .combineByKey(
-                    p -> new FlightDataSerializable(p.getTimeDelay() , 0 , 1),
+                    p -> {
+                        int delayedCnt = 0;
+                        if (p.getDestAiroportID() > 0)
+                            delayedCnt++;
+                        return new FlightDataSerializable(p.getTimeDelay() , delayedCnt , 1);
+                    },
                         FlightDataSerializable::addValue,
                         FlightDataSerializable::Add
                 );
