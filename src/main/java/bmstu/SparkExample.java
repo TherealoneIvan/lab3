@@ -32,7 +32,7 @@ public class SparkExample {
                 .mapPartitionsWithIndex(
                         (indx , line) -> {
                             if (indx == 0)
-                                
+                                line.
                         }
                 );
         JavaRDD<String> inputFlightRDD = sc.textFile(flightPath);
