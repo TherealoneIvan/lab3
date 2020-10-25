@@ -88,14 +88,11 @@ public class SparkExample {
                 .combineByKey(
                     p -> {
                             int delayedCnt = 0;
-                            if (p.getDestAiroportID() > 0)
+                            if (p.getDestAiroportID() > 0 || p.isCanceld())
                                 delayedCnt++;
                             return new FlightDataSerializable(p.getTimeDelay() , delayedCnt , 1);
                     },
-                    (flightDataSerializable  , p) -> FlightDataSerializable.addValue(
-                                                            flightDataSerializable,
-                                                            p
-                        ),
+                    FlightDataSerializable::addValue,
                     FlightDataSerializable::Add
                 );
         final Broadcast<Map<Integer, String>> airportsBroadcasted =
