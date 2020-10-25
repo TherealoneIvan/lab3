@@ -20,6 +20,7 @@ public class SparkExample {
     public static final int originDelayID = 18;
     public static final int originCanceldID = 19;
     public static final String REGEX_BACKSLASH = "\"";
+    public static final String EMPTY_STRING = "";
 
     public static void main(String args[]) throws Exception {
         if (args.length != 3) {
@@ -71,7 +72,7 @@ public class SparkExample {
                                                 Integer.parseInt(items[originDestID]),
                                                 0,
                                                 true));
-                            } else if (!items[originDestID].equals("") && !items[]) {
+                            } else if (!items[originDestID].equals(EMPTY_STRING) && !items[originDelayID].equals("")) {
                                 return new Tuple2<>(new Tuple2<>(Integer.parseInt(items[originAiroportID])
                                         , Integer.parseInt(items[originDestID])),
                                         new AiroportDataSeriazable(
