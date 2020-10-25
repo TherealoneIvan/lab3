@@ -87,11 +87,8 @@ public class SparkExample {
         JavaPairRDD<Tuple2<Integer, Integer>, FlightDataSerializable> reducedRes = resRDD
                 .combineByKey(
                     p -> new FlightDataSerializable(p.getTimeDelay() , 1 , 1),
-                    (flightDataSerializable  , p) -> FlightDataSerializable.addValue(
-                                                            flightDataSerializable,
-                                                            p
-                        ),
-                    FlightDataSerializable::Add
+                        FlightDataSerializable::addValue,
+                        FlightDataSerializable::Add
                 );
         final Broadcast<Map<Integer, String>> airportsBroadcasted =
                 sc.broadcast(airName);
