@@ -87,13 +87,16 @@ public class SparkExample {
         JavaPairRDD<Tuple2<Integer, Integer>, FlightDataSerializable> reducedRes = resRDD
                 .combineByKey(
                     p -> {
-                        int delayedCnt = 0;
-                        if (p.getDestAiroportID() > 0)
-                            delayedCnt++;
-                        return new FlightDataSerializable(p.getTimeDelay() , delayedCnt , 1);
+                            int delayedCnt = 0;
+                            if (p.getDestAiroportID() > 0)
+                                delayedCnt++;
+                            return new FlightDataSerializable(p.getTimeDelay() , delayedCnt , 1);
                     },
-                        FlightDataSerializable::addValue,
-                        FlightDataSerializable::Add
+                    (flightDataSerializable  , p) -> FlightDataSerializable.addValue(
+                                                            flightDataSerializable,
+                                                            p
+                        ),
+                    FlightDataSerializable::Add
                 );
         final Broadcast<Map<Integer, String>> airportsBroadcasted =
                 sc.broadcast(airName);
@@ -103,9 +106,9 @@ public class SparkExample {
                     output += airportsBroadcasted.value().get(item._1._1) + " "
                             + item._1._1 + " "
                             + airportsBroadcasted.value().get(item._1._2) + " "
-                            + item._1._2 + " \n"
+                            + item._1._2 + " "
                             + "max delay= "
-                            + item._2.getMaxDelay() + " \n"
+                            + item._2.getMaxDelay() + " "
                             + "delayed procent "
                             + item._2.ReturnProcent();
                     return output;
