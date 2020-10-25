@@ -28,6 +28,7 @@ public class SparkExample {
         String flightPath = args[1];
         SparkConf conf = new SparkConf().setAppName("sample");
         JavaSparkContext sc = new JavaSparkContext(conf);
+        Function2 
         JavaRDD<String> inputAiroportRDD = sc.textFile(airoportPath)
                 .mapPartitionsWithIndex(
                         (indx , line) -> {
