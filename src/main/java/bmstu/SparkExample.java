@@ -64,7 +64,7 @@ public class SparkExample {
         JavaPairRDD<Tuple2<Integer, Integer>, AiroportDataSeriazable> resRDD = inputFlightRDD
                 .mapToPair(line -> {
                             String[] items = line.split(flightRegex);
-                            if (!items[originDelayID].equals("")) {
+                            if (items[originDelayID].equals("")) {
                                 return new Tuple2<>(new Tuple2<>(Integer.parseInt(items[originAiroportID])
                                         , Integer.parseInt(items[originDestID])),
                                         new AiroportDataSeriazable(
@@ -72,7 +72,7 @@ public class SparkExample {
                                                 Integer.parseInt(items[originDestID]),
                                                 0,
                                                 true));
-                            } else  {
+                            } else {
                                 return new Tuple2<>(new Tuple2<>(Integer.parseInt(items[originAiroportID])
                                         , Integer.parseInt(items[originDestID])),
                                         new AiroportDataSeriazable(
