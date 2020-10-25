@@ -38,6 +38,7 @@ public class FlightDataSerializable implements Serializable {
         );
     }
     public double ReturnProcent() {
+        if (delayedCount == 0)
         double res = (double)delayedCount / (double)(allFlightsCount / 100);
         return res;
     }
