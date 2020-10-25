@@ -4,8 +4,8 @@ import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
+import org.apache.spark.api.java.function.Function2;
 import org.apache.spark.broadcast.Broadcast;
-import scala.Function2;
 import scala.Tuple2;
 
 import java.util.Iterator;
@@ -31,7 +31,10 @@ public class SparkExample {
         SparkConf conf = new SparkConf().setAppName("sample");
         JavaSparkContext sc = new JavaSparkContext(conf);
         Function2 removeHeader = new Function2<Integer , Iterator<String> , Iterator<String>>(){
-            
+            @Override
+            public Iterator<String> call(Integer ind, Iterator<String> iterator) throws Exception {
+                
+            }
         }
         JavaRDD<String> inputAiroportRDD = sc.textFile(airoportPath)
                 .mapPartitionsWithIndex(
