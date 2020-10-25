@@ -82,6 +82,7 @@ public class SparkExample {
                                                 Double.parseDouble(items[originDelayID]),
                                                 false));
                             }
+                            return null;
                         }
                 );
 
