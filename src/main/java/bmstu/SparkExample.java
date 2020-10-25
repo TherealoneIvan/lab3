@@ -106,7 +106,7 @@ public class SparkExample {
                             + item._1._2 + " \n"
                             + "max delay= "
                             + item._2.getMaxDelay() + " \n"
-                            + "delayed procent "
+                            + "delayed and canceled procent "
                             + item._2.ReturnProcent();
                     return output;
                 }
