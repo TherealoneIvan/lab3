@@ -38,8 +38,7 @@ public class SparkExample {
                                 airport += airportsNames[i];
                             String preParseID = airportsNames[0]
                                     .replace(REGEX_BACKSLASH, "");
-                            if (!preParseID.equals("Code"))
-                                int airaceID = Integer.parseInt(preParseID);
+                            int airaceID = Integer.parseInt(preParseID);
                             return new Tuple2<>(airaceID , airport);
                         }
                 );
