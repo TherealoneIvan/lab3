@@ -8,6 +8,7 @@ import org.apache.spark.broadcast.Broadcast;
 import scala.Function2;
 import scala.Tuple2;
 
+import java.util.Iterator;
 import java.util.Map;
 
 
@@ -29,7 +30,7 @@ public class SparkExample {
         String flightPath = args[1];
         SparkConf conf = new SparkConf().setAppName("sample");
         JavaSparkContext sc = new JavaSparkContext(conf);
-        Function2 removeHeader = new Function2<Integer , >
+        Function2 removeHeader = new Function2<Integer , Iterator<String> , >
         JavaRDD<String> inputAiroportRDD = sc.textFile(airoportPath)
                 .mapPartitionsWithIndex(
                         (indx , line) -> {
