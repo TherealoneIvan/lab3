@@ -1,4 +1,4 @@
-package bmstu.labs;
+package bmstu;
 
 import java.io.Serializable;
 
