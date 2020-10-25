@@ -42,12 +42,7 @@ public class SparkExample {
             }
         };
         JavaRDD<String> inputAiroportRDD = sc.textFile(airoportPath)
-                .mapPartitionsWithIndex(
-                        (indx , line) -> {
-                            if (indx == 0)
-                                line.
-                        }
-                );
+                .mapPartitionsWithIndex(removeHeader , );
         JavaRDD<String> inputFlightRDD = sc.textFile(flightPath);
         JavaPairRDD<Integer , String> airoportNames = inputAiroportRDD
                 .mapToPair( line -> {
