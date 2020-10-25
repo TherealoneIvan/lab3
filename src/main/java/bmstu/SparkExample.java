@@ -99,9 +99,9 @@ public class SparkExample {
                 item ->{
                     String output = "";
                     output += airportsBroadcasted.value().get(item._1._1) + " "
-                            + item._1 + " "
+                            + item._1._1 + " "
                             + airportsBroadcasted.value().get(item._1._2) + " "
-                            + item._2 + " "
+                            + item._1._2 + " "
                             + "max delay= "
                             + item._2.getMaxDelay() + " "
                             + "delayed procent "
