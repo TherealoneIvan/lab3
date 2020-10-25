@@ -33,7 +33,9 @@ public class SparkExample {
         Function2 removeHeader = new Function2<Integer , Iterator<String> , Iterator<String>>(){
             @Override
             public Iterator<String> call(Integer ind, Iterator<String> iterator) throws Exception {
-                if (ind == 0)
+                if (ind == 0 && iterator.hasNext()){
+                    
+                }
             }
         }
         JavaRDD<String> inputAiroportRDD = sc.textFile(airoportPath)
