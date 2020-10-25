@@ -35,10 +35,12 @@ public class SparkExample {
             public Iterator<String> call(Integer ind, Iterator<String> iterator) throws Exception {
                 if (ind == 0 && iterator.hasNext()){
                     iterator.next();
-                    
+                    return iterator;
+                }else {
+                    return iterator;
                 }
             }
-        }
+        };
         JavaRDD<String> inputAiroportRDD = sc.textFile(airoportPath)
                 .mapPartitionsWithIndex(
                         (indx , line) -> {
