@@ -31,7 +31,8 @@ public class SparkExample {
         JavaRDD<String> inputAiroportRDD = sc.textFile(airoportPath)
                 .mapPartitionsWithIndex(
                         (indx , line) -> {
-                            
+                            if (indx == 0)
+                                
                         }
                 );
         JavaRDD<String> inputFlightRDD = sc.textFile(flightPath);
