@@ -23,9 +23,12 @@ public class FlightDataSerializable implements Serializable {
     }
 
     public static FlightDataSerializable addValue(FlightDataSerializable a , AiroportDataSeriazable b){
+        int isDelayed = 0;
+        if (b.getTimeDelay() > 0 || b.isCanceld())
+            isDelayed = 1;
         return new FlightDataSerializable(
                 Math.max(a.getMaxDelay() ,b.getTimeDelay()),
-                a.getDelayedCount() + 1,
+                a.getDelayedCount() + isDelayed,
                 a.getAllFlightsCount() + 1
         );
     }
